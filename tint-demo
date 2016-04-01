@@ -1,0 +1,21 @@
+import scipy.integrate as integrate
+import scipy.special as special
+import numpy as np
+def f(x,y,z):
+    return 8*x*y*z
+
+def bounds_z():
+    return [0,1]
+
+def bounds_y():
+    return [2,3]
+
+def bounds_x():
+    return [1,2]
+
+print (integrate.nquad(f, [bounds_z(), bounds_x(), bounds_y()]))
+# ^^ Expects 15 ^^ 
+f = lambda x: np.exp(-x)*np.sin(x)
+l = integrate.quad(f,0,2*np.pi)
+print(l)
+
